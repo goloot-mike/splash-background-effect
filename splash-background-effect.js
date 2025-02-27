@@ -1538,11 +1538,16 @@ function correctDeltaY(delta) {
 }
 
 function generateColor() {
-    return {
-        r: 255 / 255,  // Full red
-        g: 140 / 255,  // Medium green for orange balance
-        b: 0 / 255     // No blue for pure orange
-    };
+    let c = HSVtoRGB(1, 1, 1);
+    c = {
+        r: 255 / 255,
+        g: 140 / 255,
+        b: 0 / 255
+    }
+    c.r *= 0.15;
+    c.g *= 0.15;
+    c.b *= 0.15;
+    return c;
 }
 
 
